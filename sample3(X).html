@@ -41,6 +41,7 @@
         var suntexture = textureLoader.load("img/sun.png");
         var startexture = textureLoader.load("img/star.png");
         var earthtexture = textureLoader.load("img/earth.png");
+        var hiyokoexture = textureLoader.load("img/uchuhikoushi-hiyoko.png");
 
          // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
@@ -66,6 +67,15 @@
         sunplane.position.set(0, 0, 0);
         scene.add( sunplane );
 
+         //平面（ポリゴン）を作成
+        var hiyokogeometry = new THREE.PlaneGeometry(100,100);
+        var hiyokomat = new THREE.MeshBasicMaterial({transparent:true});
+        hiyokomat.map=hiyokoexture;
+        var hiyokoplane = new THREE.Mesh( hiyokogeometry, hiyokomat );
+        sunplane.position.set(0, 50, 0);
+        scene.add( hiyokoplane );
+
+
         // ビルボードを作成
         for (let i = 0; i < 30; i++) {
           const sprite = new THREE.Sprite(material);
@@ -80,32 +90,32 @@
         }
 
         // starグループ
-        var stargroup = new THREE.Group();
-        scene.add(stargroup);
+        //var stargroup = new THREE.Group();
+        //scene.add(stargroup);
         
 
-        var stargeometry = new THREE.PlaneGeometry(150,120);
-        var starmat = new THREE.MeshBasicMaterial({transparent:true});
-        starmat.map= startexture;
+       // var stargeometry = new THREE.PlaneGeometry(150,120);
+        //var starmat = new THREE.MeshBasicMaterial({transparent:true});
+        //starmat.map= startexture;
 
-        var star1plane = new THREE.Mesh( stargeometry, starmat );
-        star1plane.position.set(250, 0, 0);
-        star1plane.rotation.y = 20;
-        stargroup.add( star1plane );
+        //var star1plane = new THREE.Mesh( stargeometry, starmat );
+        //star1plane.position.set(250, 0, 0);
+        //star1plane.rotation.y = 20;
+        //stargroup.add( star1plane );
 
-        var star2plane = new THREE.Mesh( stargeometry, starmat );
-        star2plane.position.set(-250, 0, 0);
+        //var star2plane = new THREE.Mesh( stargeometry, starmat );
+       // star2plane.position.set(-250, 0, 0);
         //star2plane.rotation.y = 1.5708;
-         star2plane.rotation.y = 20;
-        stargroup.add( star2plane );
+       //  star2plane.rotation.y = 20;
+        //stargroup.add( star2plane );
 
         var star3plane = new THREE.Mesh( stargeometry, starmat );
         star3plane.position.set(0, 0, 250);
         stargroup.add( star3plane );
 
-        var star4plane = new THREE.Mesh( stargeometry, starmat );
-        star4plane.position.set(0, 0, -250);
-        stargroup.add( star4plane );
+        //var star4plane = new THREE.Mesh( stargeometry, starmat );
+       // star4plane.position.set(0, 0, -250);
+       // stargroup.add( star4plane );
      
       　 // 光源（環境光）
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
@@ -129,10 +139,10 @@
 
           sunplane.rotation.setFromRotationMatrix(camera.matrix);
          // stargroup.rotation.setFromRotationMatrix(camera.matrix);
-          star1plane.rotation.setFromRotationMatrix(camera.matrix);
-          star2plane.rotation.setFromRotationMatrix(camera.matrix);
-          star3plane.rotation.setFromRotationMatrix(camera.matrix);
-          star4plane.rotation.setFromRotationMatrix(camera.matrix);
+          //star1plane.rotation.setFromRotationMatrix(camera.matrix);
+          //star2plane.rotation.setFromRotationMatrix(camera.matrix);
+          //star3plane.rotation.setFromRotationMatrix(camera.matrix);
+          //star4plane.rotation.setFromRotationMatrix(camera.matrix);
           requestAnimationFrame(tick);
         }
       }
