@@ -68,6 +68,7 @@
         // starグループ
         var stargroup = new THREE.Group();
         scene.add(stargroup);
+        all.add(plane);//平面を追加
 
         var stargeometry = new THREE.PlaneGeometry(150,120);
         var starmat = new THREE.MeshBasicMaterial({transparent:true});
