@@ -56,6 +56,8 @@
         var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
         sunplane.position.set(0, 250, 0);
+        plane.rotation.set( -Math.PI/2, 0, 0 );
+        plane.position.set(0,0,0);
         scene.add(plane);
         scene.add( sunplane );
 
