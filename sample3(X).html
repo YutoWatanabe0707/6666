@@ -54,7 +54,7 @@
         earthmat.map=earthtexture;
        // var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var sphere = new THREE.Mesh(sphereGeometry, earthmat);
-        sphere.position.set( 0, 0, 50 );
+        sphere.position.set( 0, 0, 400 );
         scene.add(sphere );
 
        
@@ -70,7 +70,7 @@
         for (let i = 0; i < 30; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
-          sprite.position.x = 1000 * (Math.random() - 0.5);
+          sprite.position.x = 1500 * (Math.random() - 0.5);
           sprite.position.y = 300 * Math.random() - 150;
           sprite.position.z = 1000 * (Math.random() - 0.5);
           // 必要に応じてスケールを調整
