@@ -52,6 +52,9 @@
         var sunmat = new THREE.MeshBasicMaterial({transparent:true});
         sunmat.map= suntexture;
         var sunplane = new THREE.Mesh( sungeometry, sunmat );
+        var planeGeometry = new THREE.PlaneGeometry(5,5,10,10); //縦、横、分割数、分割数
+        var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
         sunplane.position.set(0, 250, 0);
         scene.add( sunplane );
 
