@@ -43,7 +43,7 @@
         var earthtexture = textureLoader.load("img/earth.png");
 
 
-         //箱を作成(原点に作成)
+         //玉を作成(原点に作成)
         var sphereGeometry = new THREE.SphereGeometry( 120, 200, 200 );
         var earthmat = new THREE.MeshBasicMaterial({transparent:true});
         earthmat.map=earthtexture;
@@ -110,7 +110,7 @@
           renderer.render(scene, camera);
 
           //sunplane.rotation.setFromRotationMatrix(camera.matrix);
-          //stargroup.rotation.setFromRotationMatrix(camera.matrix);
+          stargroup.rotation.setFromRotationMatrix(camera.matrix);
           star1plane.rotation.setFromRotationMatrix(camera.matrix);
           star2plane.rotation.setFromRotationMatrix(camera.matrix);
           star3plane.rotation.setFromRotationMatrix(camera.matrix);
