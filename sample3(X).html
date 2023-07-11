@@ -37,7 +37,7 @@
         scene.add(axisHelper);
 
          //箱を作成(原点に作成)
-        var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 );
+        var sphereGeometry = new THREE.SphereGeometry( 0.8, 200, 200 );
         var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var box = new THREE.Mesh(sphereGeometry, material);
         scene.add(box);
