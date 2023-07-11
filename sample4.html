@@ -48,7 +48,7 @@
        // const material = new THREE.SpriteMaterial({ map: texture,});
         const geometry = new THREE.BoxGeometry(50, 50, 50);
         //const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
-        const material = new THREE.MeshStandardMaterial({ map: texture,});
+        const material = new THREE.MeshStandardMaterial();
 
         for (let i = 0; i < 1000; i++) {
           const mesh = new THREE.Mesh(geometry, material);
