@@ -31,10 +31,10 @@
         controls.autoRotate = true;
 
         // helper
-       // const gridHelper = new THREE.GridHelper(1000,20); // size, step
-       // scene.add(gridHelper);
-        //const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
-       // scene.add(axisHelper);
+        const gridHelper = new THREE.GridHelper(1000,20); // size, step
+        scene.add(gridHelper);
+        const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
+        scene.add(axisHelper);
 
          // texture作成
         var textureLoader = new THREE.TextureLoader();
@@ -99,6 +99,8 @@
         // シーンに追加
         scene.add(directionalLight1);
         
+       // 球を回転させる
+          sphere.rotation.y += 0.01;
 
         tick();
 
@@ -109,8 +111,8 @@
          stargroup.rotation.y += 0.01;
           renderer.render(scene, camera);
 
-          //sunplane.rotation.setFromRotationMatrix(camera.matrix);
-          stargroup.rotation.setFromRotationMatrix(camera.matrix);
+          sunplane.rotation.setFromRotationMatrix(camera.matrix);
+         // stargroup.rotation.setFromRotationMatrix(camera.matrix);
           star1plane.rotation.setFromRotationMatrix(camera.matrix);
           star2plane.rotation.setFromRotationMatrix(camera.matrix);
           star3plane.rotation.setFromRotationMatrix(camera.matrix);
