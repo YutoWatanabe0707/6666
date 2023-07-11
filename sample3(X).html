@@ -41,6 +41,7 @@
         var suntexture = textureLoader.load("img/sun.png");
         var startexture = textureLoader.load("uchuhikoushi-hiyoko.png");
         var earthtexture = textureLoader.load("img/earth.png");
+        var moontexture = textureLoader.load("mochitsuki-usagi.png");
 
          // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
@@ -89,18 +90,22 @@
         var starmat = new THREE.MeshBasicMaterial({transparent:true});
         starmat.map= startexture;
 
+         var moongeometry = new THREE.PlaneGeometry(200,200);
+        var moonmat = new THREE.MeshBasicMaterial({transparent:true});
+        moonmat.map= moontexture;
+
         var star1plane = new THREE.Mesh( stargeometry, starmat );
         star1plane.position.set(0, 0, 200);
         star1plane.rotation.y = 20;
         stargroup.add( star1plane );
 
-       // var star2plane = new THREE.Mesh( stargeometry, starmat );
-       // star2plane.position.set(-250, 0, 0);
-       // star2plane.rotation.y = 1.5708;
-       //star2plane.rotation.y = 20;
-       // stargroup.add( star2plane );
+        var star2plane = new THREE.Mesh( stargeometry, starmat );
+        star2plane.position.set(0, 0, -400);
+        star2plane.rotation.y = 1.5708;
+        star2plane.rotation.y = 20;
+        stargroup.add( star2plane );
 
-       // var star3plane = new THREE.Mesh( stargeometry, starmat );
+       // var star3plane = new THREE.Mesh( stargeometry, moonmat );
         //star3plane.position.set(0, 0, 250);
         //stargroup.add( star3plane );
 
@@ -131,7 +136,7 @@
           sunplane.rotation.setFromRotationMatrix(camera.matrix);
          // stargroup.rotation.setFromRotationMatrix(camera.matrix);
           star1plane.rotation.setFromRotationMatrix(camera.matrix);
-         // star2plane.rotation.setFromRotationMatrix(camera.matrix);
+          star2plane.rotation.setFromRotationMatrix(camera.matrix);
           //star3plane.rotation.setFromRotationMatrix(camera.matrix);
           //star4plane.rotation.setFromRotationMatrix(camera.matrix);
           requestAnimationFrame(tick);
