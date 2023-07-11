@@ -60,12 +60,12 @@
 
        
          //平面（ポリゴン）を作成
-        var sungeometry = new THREE.PlaneGeometry(300,300);
-        var sunmat = new THREE.MeshBasicMaterial({transparent:true});
-        sunmat.map=suntexture;
-        var sunplane = new THREE.Mesh( sungeometry, sunmat );
-        sunplane.position.set(0, 0, 0);
-        scene.add( sunplane );
+       // var sungeometry = new THREE.PlaneGeometry(300,300);
+       // var sunmat = new THREE.MeshBasicMaterial({transparent:true});
+        //sunmat.map=suntexture;
+        //var sunplane = new THREE.Mesh( sungeometry, sunmat );
+        //sunplane.position.set(0, 0, 0);
+        //scene.add( sunplane );
 
          //平面（ポリゴン）を作成
         var hiyokogeometry = new THREE.PlaneGeometry(350,350);
@@ -137,7 +137,7 @@
          //stargroup.rotation.y += 0.01;
           renderer.render(scene, camera);
 
-          sunplane.rotation.setFromRotationMatrix(camera.matrix);
+          //sunplane.rotation.setFromRotationMatrix(camera.matrix);
          // stargroup.rotation.setFromRotationMatrix(camera.matrix);
           //star1plane.rotation.setFromRotationMatrix(camera.matrix);
           //star2plane.rotation.setFromRotationMatrix(camera.matrix);
