@@ -45,20 +45,20 @@
         scene.add(group);
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/star.png");
-        const material = new THREE.SpriteMaterial({ map: texture,});
+       // const material = new THREE.SpriteMaterial({ map: texture,});
         //const geometry = new THREE.BoxGeometry(50, 50, 50);
         //const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
-        //const material = new THREE.MeshStandardMaterial();
+        const material = new THREE.MeshStandardMaterial({ map: texture,});
 
         for (let i = 0; i < 1000; i++) {
-         // const mesh = new THREE.Mesh(geometry, material);
+          const mesh = new THREE.Mesh(material);
           const sprite = new THREE.Sprite(material);
-          Sprite.position.x = (Sprite.random() - 0.5) * 2000;
-          Sprite.position.y = (Sprite.random() - 0.5) * 2000;
-          Sprite.position.z = (Sprite.random() - 0.5) * 2000;
-          Sprite.rotation.x = Sprite.random() * 2 * Sprite.PI;
-          Sprite.rotation.y = Sprite.random() * 2 * Sprite.PI;
-          Sprite.rotation.z = Sprite.random() * 2 * Sprite.PI;
+          Mesh.position.x = (Mesh.random() - 0.5) * 2000;
+          Mesh.position.y = (Mesh.random() - 0.5) * 2000;
+          Mesh.position.z = (Mesh.random() - 0.5) * 2000;
+          Mesh.rotation.x = Mesh.random() * 2 * Mesh.PI;
+          Mesh.rotation.y = Mesh.random() * 2 * Mesh.PI;
+          Mesh.rotation.z = Mesh.random() * 2 * Mesh.PI;
           // グループに格納する
           group.add(Sprite);
         }
