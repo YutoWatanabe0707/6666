@@ -46,15 +46,18 @@
         //var textureLoader = new THREE.TextureLoader();  
         //var texture = textureLoader.load("img/star.png");
        // const material = new THREE.SpriteMaterial({ map: texture,});
-        const geometry = new THREE.BoxGeometry(50, 50, 50);
+        //const geometry = new THREE.BoxGeometry(50, 50, 50);
         //const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
         const material = new THREE.MeshStandardMaterial();
 
         for (let i = 0; i < 1000; i++) {
-          const mesh = new THREE.Mesh(geometry, material);
-          mesh.position.x = (Math.random() - 0.5) * 1000;
-          mesh.position.y = (Math.random() - 0.5) * 5000;
-          mesh.position.z = (Math.random() - 0.5) * 100;
+          //const mesh = new THREE.Mesh(geometry, material);
+          var stargeometry = new THREE.PlaneGeometry(150,120);
+          var starmat = new THREE.MeshBasicMaterial({transparent:true});
+          starmat.map= startexture;
+          mesh.position.x = (Math.random() - 0.5) * 2000;
+          mesh.position.y = (Math.random() - 0.5) * 2000;
+          mesh.position.z = (Math.random() - 0.5) * 2000;
           mesh.rotation.x = Math.random() * 2 * Math.PI;
           mesh.rotation.y = Math.random() * 2 * Math.PI;
           mesh.rotation.z = Math.random() * 2 * Math.PI;
