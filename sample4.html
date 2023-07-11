@@ -53,12 +53,12 @@
         for (let i = 0; i < 1000; i++) {
          // const mesh = new THREE.Mesh(geometry, material);
           const sprite = new THREE.Sprite(material);
-          Sprite.position.x = (Math.random() - 0.5) * 2000;
-          Sprite.position.y = (Math.random() - 0.5) * 2000;
-          Sprite.position.z = (Math.random() - 0.5) * 2000;
-          Sprite.rotation.x = Math.random() * 2 * Math.PI;
-          Sprite.rotation.y = Math.random() * 2 * Math.PI;
-          Sprite.rotation.z = Math.random() * 2 * Math.PI;
+          Sprite.position.x = (Sprite.random() - 0.5) * 2000;
+          Sprite.position.y = (Sprite.random() - 0.5) * 2000;
+          Sprite.position.z = (Sprite.random() - 0.5) * 2000;
+          Sprite.rotation.x = Sprite.random() * 2 * Sprite.PI;
+          Sprite.rotation.y = Sprite.random() * 2 * Sprite.PI;
+          Sprite.rotation.z = Sprite.random() * 2 * Sprite.PI;
           // グループに格納する
           group.add(Sprite);
         }
