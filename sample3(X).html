@@ -31,7 +31,7 @@
         controls.autoRotate = true;
 
         // helper
-        //const gridHelper = new THREE.GridHelper(1000,20); // size, step
+        const gridHelper = new THREE.GridHelper(1000,20); // size, step
         scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
@@ -52,7 +52,7 @@
         var sunmat = new THREE.MeshBasicMaterial({transparent:true});
         sunmat.map= suntexture;
         var sunplane = new THREE.Mesh( sungeometry, sunmat );
-        sunplane.position.set(0, 250, 0);
+        sunplane.position.set(0, 100, 0);
         scene.add( sunplane );
 
         // starグループ
