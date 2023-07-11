@@ -52,7 +52,7 @@
 
         for (let i = 0; i < 1000; i++) {
           const mesh = new THREE.Mesh(material);
-          const sprite = new THREE.Sprite(material);
+          //const sprite = new THREE.Sprite(material);
           Mesh.position.x = (Mesh.random() - 0.5) * 2000;
           Mesh.position.y = (Mesh.random() - 0.5) * 2000;
           Mesh.position.z = (Mesh.random() - 0.5) * 2000;
@@ -60,7 +60,7 @@
           Mesh.rotation.y = Mesh.random() * 2 * Mesh.PI;
           Mesh.rotation.z = Mesh.random() * 2 * Mesh.PI;
           // グループに格納する
-          group.add(Sprite);
+          group.add(Mesh);
         }
 
      
