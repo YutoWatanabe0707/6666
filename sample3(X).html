@@ -48,13 +48,22 @@
         var startexture = textureLoader.load("img/star.png");
 
         // 平面（ポリゴン）を作成
-        var sungeometry = new THREE.PlaneGeometry(200,200);
-        var sunmat = new THREE.MeshBasicMaterial({transparent:true});
-        sunmat.map=suntexture;
-        var sunplane = new THREE.Mesh( sungeometry, sunmat );
-        sunplane.position.set(0, 250, 0);
-         sunplane .rotation.x = 1.5708;
-        scene.add( sunplane );
+        //var sungeometry = new THREE.PlaneGeometry(200,200);
+        //var sunmat = new THREE.MeshBasicMaterial({transparent:true});
+       // sunmat.map=suntexture;
+       //var sunplane = new THREE.Mesh( sungeometry, sunmat );
+        //sunplane.position.set(0, 250, 0);
+        // sunplane .rotation.x = 1.5708;
+       // scene.add( sunplane );
+
+         // 平面を作成
+        var planeGeometry = new THREE.PlaneGeometry(5,5,10,10); //縦、横、分割数、分割数
+        var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.rotation.set( -Math.PI/2, 0, 0 );
+        plane.position.set(0,0,0);
+        scene.add(plane);
+
 
         // starグループ
         var stargroup = new THREE.Group();
@@ -102,7 +111,7 @@
          stargroup.rotation.y += 0.01;
           renderer.render(scene, camera);
 
-          sunplane.rotation.setFromRotationMatrix(camera.matrix);
+          //sunplane.rotation.setFromRotationMatrix(camera.matrix);
           //stargroup.rotation.setFromRotationMatrix(camera.matrix);
           star1plane.rotation.setFromRotationMatrix(camera.matrix);
           star2plane.rotation.setFromRotationMatrix(camera.matrix);
