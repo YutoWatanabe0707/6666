@@ -84,6 +84,7 @@
         scene.add(directionalLight1);
         
 
+        mesh.rotation.setFromRotationMatrix(camera.matrix);
         tick();
 
         // 毎フレーム時に実行されるループイベントです
