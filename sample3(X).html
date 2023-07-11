@@ -24,7 +24,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 200, 1000);
+        camera.position.set(0, 400, 1000);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera);
@@ -68,11 +68,11 @@
         scene.add( sunplane );
 
          //平面（ポリゴン）を作成
-        var hiyokogeometry = new THREE.PlaneGeometry(100,100);
+        var hiyokogeometry = new THREE.hiyokoGeometry(100,100);
         var hiyokomat = new THREE.MeshBasicMaterial({transparent:true});
         hiyokomat.map=hiyokoexture;
         var hiyokoplane = new THREE.Mesh( hiyokogeometry, hiyokomat );
-        sunplane.position.set(0, 50, 0);
+        hiyokoplane.position.set(0, 50, 0);
         scene.add( hiyokoplane );
 
 
