@@ -48,11 +48,11 @@
         var startexture = textureLoader.load("img/star.png");
 
         // 平面（ポリゴン）を作成
-        var sungeometry = new THREE.PlaneGeometry(200,200);
+        var sungeometry = new THREE.PlaneGeometry(100,200);
         var sunmat = new THREE.MeshBasicMaterial({transparent:true});
         sunmat.map= suntexture;
         var sunplane = new THREE.Mesh( sungeometry, sunmat );
-        sunplane.position.set(0, 100, 0);
+        sunplane.position.set(0, 250, 0);
         scene.add( sunplane );
 
         // starグループ
