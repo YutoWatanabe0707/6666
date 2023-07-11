@@ -68,7 +68,7 @@
         scene.add( sunplane );
 
          //平面（ポリゴン）を作成
-        var hiyokogeometry = new THREE.hiyokoGeometry(100,100);
+        var hiyokogeometry = new THREE.PlaneGeometry(100,100);
         var hiyokomat = new THREE.MeshBasicMaterial({transparent:true});
         hiyokomat.map=hiyokoexture;
         var hiyokoplane = new THREE.Mesh( hiyokogeometry, hiyokomat );
